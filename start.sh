@@ -4,7 +4,7 @@ cd "$(dirname "${BASH_SOURCE}")"
 function doIt() {
 	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "start.sh" \
     --exclude "setup.sh" --exclude "images" --exclude "vim-plugins.txt" \
-		--exclude "README.md" --exclude "LICENSE-MIT.txt" -av --no-perms . ~
+		--exclude "README.txt" --exclude "LICENSE-MIT.txt" -av --no-perms . ~
 	source ~/.bash_profile
 }
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
