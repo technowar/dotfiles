@@ -2,3 +2,8 @@ https://github.com/flazz/vim-colorschemes.git
 https://github.com/mattn/emmet-vim.git
 https://github.com/fatih/vim-go.git
 https://github.com/neoclide/coc.nvim.git
+https://github.com/Shougo/deoplete.nvim
+https://github.com/roxma/nvim-yarp
+https://github.com/roxma/vim-hug-neovim-rpc
+https://github.com/Shougo/neosnippet.vim
+https://github.com/Shougo/neosnippet-snippets
