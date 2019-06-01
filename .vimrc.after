@@ -197,6 +197,45 @@ let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+"inoremap <silent><expr> <TAB>
+      "\ pumvisible() ? "\<C-n>" :
+      "\ <SID>check_back_space() ? "\<TAB>" :
+      "\ coc#refresh()
+"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+"function! s:check_back_space() abort
+  "let col = col('.') - 1
+  "return !col || getline('.')[col - 1]  =~# '\s'
+"endfunction
+
+"" Use <c-space> for trigger completion.
+"inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use <cr> for confirm completion.
+" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Golang
+" vim-go specific settings
+let g:go_fmt_command = "goimports"
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_functions = 1
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+let g:go_metalinter_deadline = "5s"
+let g:go_snippet_engine = "ultisnips"
+
+" Snippets
+let g:UltiSnipsExpandTrigger='<Nop>'
+let g:UltiSnipsJumpForwardTrigger = '<TAB>'
+let g:UltiSnipsJumpBackwardTrigger = '<S-TAB>'
+let g:coc_snippet_next = '<TAB>'
+let g:coc_snippet_prev = '<S-TAB>'
+
+
 if filereadable(expand("~/.vimrc.extra"))
   source ~/.vimrc.extra
 endif
