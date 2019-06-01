@@ -35,10 +35,10 @@ echo '  -> janus installed'
 # save dotfiles dir
 dotfiles_folder=$(pwd)
 # create ~/.janus folder and install plugins
-echo '  -> Installing vim plugins from plugins.txt'
+echo '  -> Installing vim plugins from vim-plugins.txt'
 mkdir -p ~/.janus
 cd ~/.janus
-for repo in `cat "$dotfiles_folder"/plugins.txt`
+for repo in `cat "$dotfiles_folder"/vim-plugins.txt`
 do
   git clone $repo
 done
