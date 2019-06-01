@@ -42,6 +42,7 @@ Dotfiles et al
 
 ## Addendum
 
+
 ### What's in the box
 
 
@@ -66,7 +67,17 @@ Dotfiles et al
 
 ![prompt](./images/term.png)
 
-&nbsp;
+
+### Post Install
+
+**Vim/NeoVim**
+
+You might need to check [coc.nvim](https://github.com/neoclide/coc.nvim) for some really awesome extensions. I have the following extensions enabled after the the setup.
+
+![extensions](./images/extensions.png)
+
+> To install extension, run `:CocInstall <name of extension>` from your vim/neovim editor.
+
 
 ### Custom configs and settings
 
