@@ -14,7 +14,7 @@ if [[ ! -x $(which rake) ]]; then
   exit 1
 fi
 if [[ ! -x $(which nvim) ]] || [[ ! -x $(which vim) ]]; then
-  echo Error: rake not installed
+  echo Error: vim/nvim not installed
   exit 1
 fi
 
