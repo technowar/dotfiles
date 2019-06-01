@@ -157,3 +157,4 @@ fi
 if [[ -x $(which nvim) ]]; then
 	alias vim="nvim"
 fi
+alias v="vim"
