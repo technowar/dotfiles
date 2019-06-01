@@ -101,6 +101,6 @@ if [[ -x ~/.janus/coc.nvim/install.sh ]]; then
   echo '}' >> "$dotfiles_folder"/coc-settings.json
 
   echo ' -> moving config file to .vim folder'
-  cat "$dotfiles_folder"/coc-settings.json > ~/.vim/coc-settings.json
+  mv "$dotfiles_folder"/coc-settings.json ~/.vim/coc-settings.json
   echo ' -> done'
 fi
