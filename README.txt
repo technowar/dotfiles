@@ -5,9 +5,9 @@
 //////////////////////////////////////////////////////////////////
 
   Inside the `fonts/` folder, there are 3 patched nerd fonts that
-	will enable dev-icons vim plugin.
+  will enable dev-icons vim plugin.
 
-	Install them and choose one as your terminal font.
+  Install them and choose one as your terminal font.
 
 
 
