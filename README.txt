@@ -1,5 +1,10 @@
-dotfiles
----
+dotfiles et al
+
+This is a stripped down version of my old dotfiles. I've only included the essential stuff here.
+Mostly for `Go` and `Javascript` development.
+
+  Platforms that I've used this setup on are:
+  MacOS and ArchLinux
 
 
 
@@ -14,16 +19,16 @@ dotfiles
 
 [REQUIREMENTS]
 
-  ⌾ Ruby with Rake (they come pre-installed on MacOS)
-  ⌾ Python (also comes pre-installed with MacOS)
-  ⌾ Go (1.12 or higher is better)
-  ⌾ Node with Yarn
-  ⌾ Vim / NeoVim
-  ⌾ Git
-  ⌾ Gpg
-  ⌾ Ack / Ag (I prefer the latter)
+  › Ruby with Rake (pre-installed on MacOS)
+  › Python (also comes pre-installed with MacOS)
+  › Go (1.12 abover is recommended)
+  › Node with Yarn
+  › Vim / NeoVim (the latter is better)
+  › Git
+  › Gpg
+  › Ack or Ag (https://github.com/ggreer/the_silver_searcher)
 
-  Note: Use homebrew to install these tools
+  Note: Make sure you have everything listed above before continuing with the setup
 
 
 
