@@ -1,7 +1,7 @@
 dotfiles et al
 
-This is a stripped down version of my old dotfiles. I've only included the essential stuff here.
-Mostly for `Go` and `Javascript` development.
+This is a stripped down version of my old dotfiles. I've only included
+the essential stuff here. Mostly for `Go` and `Javascript` development.
 
   Platforms that I've used this setup on are:
   MacOS and ArchLinux
@@ -28,7 +28,7 @@ Mostly for `Go` and `Javascript` development.
   › Gpg
   › Ack or Ag (https://github.com/ggreer/the_silver_searcher)
 
-  Note: Make sure you have everything listed above before continuing with the setup
+  Note: Make sure you have everything listed above before continuing.
 
 
 
@@ -46,11 +46,11 @@ Mostly for `Go` and `Javascript` development.
 
 [CUSTOMIZATION]
 
-  You add your own PATH and EXPORTS without touching the `.exports` file by creating
-  `.exports.after` file in your home dir.
+  You add your own PATH and EXPORTS without touching the `.exports` file by
+	creating `.exports.after` file in your home dir.
 
-  For `.vimrc`. Just create a `.vimrc.extra` file in your home dir and add all your
-  custom vim configs there.
+  For `.vimrc`. Just create a `.vimrc.extra` file in your home dir and add all
+	your custom vim configs there.
 
 
 
