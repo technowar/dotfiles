@@ -27,9 +27,6 @@ echo '  -> z installed!'
 # install janus
 echo '  -> Installing janus'
 curl -L https://bit.ly/janus-bootstrap | bash
-# echo '  -> Creating link for neovim'
-# ln -s ~/.vim ~/.config/nvim
-# ln -s ~/.vimrc ~/.config/nvim/init.vim
 echo '  -> janus installed'
 
 # save dotfiles dir
@@ -104,3 +101,8 @@ if [[ -x ~/.janus/coc.nvim/install.sh ]]; then
   mv "$dotfiles_folder"/coc-settings.json ~/.vim/coc-settings.json
   echo ' -> done'
 fi
+
+# echo '-> Creating link for neovim'
+sudo chown -R $USER:$USER ~/.config
+ln -s ~/.vim ~/.config/nvim
+ln -s ~/.vimrc ~/.config/nvim/init.vim
