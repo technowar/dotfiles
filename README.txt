@@ -1,12 +1,12 @@
 [~/.*]
 
-	Dotfiles et al.
+  Dotfiles et al.
 
-	This is a stripped down version of my old dotfiles. I've only included the
-	essential stuff here. Mostly for `Go` and `Javascript` development.
+  This is a stripped down version of my old dotfiles. I've only included the
+  essential stuff here. Mostly for `Go` and `Javascript` development.
 
-	Platforms that I've used this setup on are:
-	MacOS and ArchLinux
+  Platforms that I've used this setup on are:
+  MacOS and ArchLinux
 
 
 
