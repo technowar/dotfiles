@@ -27,9 +27,9 @@ echo '  -> z installed!'
 # install janus
 echo '  -> Installing janus'
 curl -L https://bit.ly/janus-bootstrap | bash
-echo '  -> Creating link for neovim'
-ln -s ~/.vim ~/.config/nvim
-ln -s ~/.vimrc ~/.config/nvim/init.vim
+# echo '  -> Creating link for neovim'
+# ln -s ~/.vim ~/.config/nvim
+# ln -s ~/.vimrc ~/.config/nvim/init.vim
 echo '  -> janus installed'
 
 # save dotfiles dir
@@ -80,7 +80,7 @@ if [[ -x ~/.janus/coc.nvim/install.sh ]]; then
   # Flow for COC (javascript completion shit)
   if [[ -x $(which npm) ]]; then
     echo ' -> setting up flow for coc'
-    npm install -g flow-bin
+    sudo npm install -g flow-bin
     if [[ -x $(which flow)  ]]; then
       echo ' -> flow installed'
       echo ',' >> "$dotfiles_folder"/coc-settings.json

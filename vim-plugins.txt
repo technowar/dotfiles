@@ -1,4 +1,3 @@
-https://github.com/flazz/vim-colorschemes.git
 https://github.com/mattn/emmet-vim.git
 https://github.com/fatih/vim-go.git
 https://github.com/neoclide/coc.nvim.git

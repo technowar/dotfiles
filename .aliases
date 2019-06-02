@@ -1,29 +1,9 @@
-# Easier navigation: .., ..., ...., ....., ~ and -
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-alias ~="cd ~" # `cd` is probably faster to type though
-alias -- -="cd -"
+# Tee .gitignore
+alias teegitignore='cat ~/.gitignore | tee -a'
 
-# Shortcuts
-alias d="cd ~/Documents/Dropbox"
-alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
-alias p="cd ~/Projects"
-alias g="git"
-alias h="history"
-alias j="jobs"
-
-# Git related aliases
-alias ga="git add"
-alias gc="git commit -S"
-alias gd="g d"
-alias gl="g l"
-alias gs="git status"
-alias gp="git push"
-alias gf="git fetch"
-alias gr="git rebase"
+# System
+alias shutdown='sudo shutdown -h now'
+alias reboot='sudo reboot'
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -150,6 +130,11 @@ alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
 alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
 
+# Grep
+alias grep="grep --color=auto"
+alias fgrep="fgrep --color=auto"
+alias egrep="egrep --color=auto"
+
 if [[ -x $(which hub) ]]; then
 	alias git="hub"
 fi
@@ -157,4 +142,3 @@ fi
 if [[ -x $(which nvim) ]]; then
 	alias vim="nvim"
 fi
-alias v="vim"
