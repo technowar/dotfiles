@@ -1,10 +1,12 @@
-dotfiles et al
+[~/.*]
 
-This is a stripped down version of my old dotfiles. I've only included
-the essential stuff here. Mostly for `Go` and `Javascript` development.
+	Dotfiles et al.
 
-  Platforms that I've used this setup on are:
-  MacOS and ArchLinux
+	This is a stripped down version of my old dotfiles. I've only included the
+	essential stuff here. Mostly for `Go` and `Javascript` development.
+
+	Platforms that I've used this setup on are:
+	MacOS and ArchLinux
 
 
 
@@ -47,10 +49,10 @@ the essential stuff here. Mostly for `Go` and `Javascript` development.
 [CUSTOMIZATION]
 
   You add your own PATH and EXPORTS without touching the `.exports` file by
-	creating `.exports.after` file in your home dir.
+  creating `.exports.after` file in your home dir.
 
-  For `.vimrc`. Just create a `.vimrc.extra` file in your home dir and add all
-	your custom vim configs there.
+  For `.vimrc`. Just create a `.vimrc.extra` file in your home dir and add
+  all your custom vim configs there.
 
 
 
