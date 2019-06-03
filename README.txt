@@ -6,7 +6,8 @@
   essential stuff here. Mostly for `Go` and `Javascript` development.
 
   Platforms that I've used this setup on are:
-  MacOS and ArchLinux
+
+    MacOS and ArchLinux
 
 
 
