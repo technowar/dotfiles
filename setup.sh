@@ -102,7 +102,7 @@ if [[ -x ~/.janus/coc.nvim/install.sh ]]; then
   echo ' -> done'
 fi
 
-# echo '-> Creating link for neovim'
-sudo chown -R $USER:$USER ~/.config
+echo '-> Creating link for neovim'
+sudo chown -R $USER:$GROUP ~/.config
 ln -s ~/.vim ~/.config/nvim
 ln -s ~/.vimrc ~/.config/nvim/init.vim
