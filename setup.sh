@@ -106,3 +106,4 @@ echo '-> Creating link for neovim'
 sudo chown -R $USER:$GROUP ~/.config
 ln -s ~/.vim ~/.config/nvim
 ln -s ~/.vimrc ~/.config/nvim/init.vim
+echo '-> done'
