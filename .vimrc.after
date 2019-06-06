@@ -310,6 +310,11 @@ let g:airline#extensions#tabline#enabled = 1
 let g:ctrlp_extensions = ['funky']
 let g:ctrlp_funky_matchtype = 'path'
 let g:ctrlp_funky_syntax_highlight = 1
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<c-t>'],
+    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+    \ }
 
 " DevIcons
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
