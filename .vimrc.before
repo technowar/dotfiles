@@ -1,3 +1,2 @@
 " Change mapleader
 let mapleader=","
-let g:airline_theme='light'

@@ -3,4 +3,3 @@ https://github.com/mattn/emmet-vim.git
 https://github.com/neoclide/coc.nvim.git
 https://github.com/tacahiroy/ctrlp-funky.git
 https://github.com/vim-airline/vim-airline.git
-https://github.com/vim-airline/vim-airline-themes.git

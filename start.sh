@@ -38,9 +38,6 @@ function setup() {
   # install janus
   echo '  -> Installing janus'
   curl -L https://bit.ly/janus-bootstrap | bash
-  echo '  -> Creating link for neovim'
-  ln -s ~/.vim ~/.config/nvim
-  ln -s ~/.vimrc ~/.config/nvim/init.vim
   echo '  -> janus installed'
 
   # save dotfiles dir
@@ -91,7 +88,7 @@ function setup() {
     # Flow for COC (javascript completion shit)
     if [[ -x $(which npm) ]]; then
       echo ' -> setting up flow for coc'
-      npm install -g flow-bin
+      sudo npm install -g flow-bin
       if [[ -x $(which flow)  ]]; then
         echo ' -> flow installed'
         echo ',' >> "$dotfiles_folder"/coc-settings.json
@@ -115,6 +112,12 @@ function setup() {
     mv "$dotfiles_folder"/coc-settings.json ~/.vim/coc-settings.json
     echo ' -> done'
   fi
+
+  echo '-> Creating link for neovim'
+  sudo chown -R $USER:$GROUP ~/.config
+  ln -s ~/.vim ~/.config/nvim
+  ln -s ~/.vimrc ~/.config/nvim/init.vim
+  echo '-> link done'
 }
 
 function doIt() {
