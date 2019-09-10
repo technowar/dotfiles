@@ -2,6 +2,13 @@
 cd "$(dirname "${BASH_SOURCE}")"
 
 function setup() {
+  echo 'export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"' > ~/.profile
+  echo 'export PATH="$HOME/.node_modules/bin:$PATH"' >> ~/.profile
+  echo 'export npm_config_prefix=~/.node_modules' >> ~/.profile
+  echo 'export GOROOT=/usr/local/go' >> ~/.profile
+  echo 'export GOPATH=/var/env/project' >> ~/.profile
+  echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> ~/.profile
+
   # check vim, git, ruby and rake first
   if [[ ! -x $(which git) ]]; then
     echo Error: git currently not installed
@@ -88,7 +95,7 @@ function setup() {
     # Flow for COC (javascript completion shit)
     if [[ -x $(which npm) ]]; then
       echo ' -> setting up flow for coc'
-      sudo npm install -g flow-bin
+      npm install -g flow-bin
       if [[ -x $(which flow)  ]]; then
         echo ' -> flow installed'
         echo ',' >> "$dotfiles_folder"/coc-settings.json
