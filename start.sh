@@ -19,8 +19,7 @@ function setup() {
     exit 1
   fi
   if [[ ! -x $(which rake) ]]; then
-    echo Error: rake not installed
-    exit 1
+    gem install --user-install rake
   fi
   if [[ ! -x $(which go) ]]; then
     echo Error: Go not installed
