@@ -2,7 +2,7 @@
 cd "$(dirname "${BASH_SOURCE}")"
 
 function setup() {
-  echo 'export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"' > ~/.profile
+  echo 'export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"' >> ~/.profile
   echo 'export PATH="$HOME/.node_modules/bin:$PATH"' >> ~/.profile
   echo 'export npm_config_prefix=~/.node_modules' >> ~/.profile
   echo 'export GOROOT=/usr/local/go' >> ~/.profile
