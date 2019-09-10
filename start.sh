@@ -8,6 +8,8 @@ function setup() {
   echo 'export GOROOT=/usr/local/go' >> ~/.profile
   echo 'export GOPATH=/var/env/project' >> ~/.profile
   echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> ~/.profile
+  
+  source ~/.profile
 
   # check vim, git, ruby and rake first
   if [[ ! -x $(which git) ]]; then
