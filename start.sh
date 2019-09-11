@@ -66,7 +66,7 @@ function setup() {
     echo '  -> running coc.nvim start.sh script'
     cd ~/.janus/coc.nvim/
     if [[ ! -x $(which yarn) ]]; then
-      curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
+      npm install -g yarn
     fi
     yarn install --frozen-lockfile
     echo '  -> coc.nvim done'
