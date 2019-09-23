@@ -11,13 +11,12 @@ git config --global user.email "$GIT_AUTHOR_EMAIL"
 # set PGP keyring if there is one for signed commits
 #
 #         List down available keys          NR==1 is the header
-# GPG_ID="$(gpg --list-keys --keyid-format long | grep pub | awk 'NR==2{print $2}' | sed -e 's/^.*\///')"
+GPG_ID="$(gpg --list-keys --keyid-format long | grep pub | awk 'NR==2{print $2}' | sed -e 's/^.*\///')"
 
 # Check if we get valid value
 #  then set user.signkey
-# if [[ "${#GPG_ID}" -ge 8 ]]; then
-# 	git config --global user.signingkey "$GPG_ID"
-# 	git config --global gpg.program gpg2
-# 	git config --global commit.gpgsign true
-# fi
-
+if [[ "${#GPG_ID}" -ge 8 ]]; then
+	git config --global user.signingkey "$GPG_ID"
+	git config --global gpg.program gpg
+	git config --global commit.gpgsign true
+fi

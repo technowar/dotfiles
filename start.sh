@@ -2,15 +2,6 @@
 cd "$(dirname "${BASH_SOURCE}")"
 
 function setup() {
-  echo 'export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"' > ~/.profile
-  echo 'export PATH="$HOME/.node_modules/bin:$PATH"' >> ~/.profile
-  echo 'export npm_config_prefix=~/.node_modules' >> ~/.profile
-  echo 'export GOROOT=/usr/local/go' >> ~/.profile
-  echo 'export GOPATH=/var/env/project' >> ~/.profile
-  echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> ~/.profile
-  
-  source ~/.profile
-
   # check vim, git, ruby and rake first
   if [[ ! -x $(which git) ]]; then
     echo Error: git currently not installed
@@ -27,7 +18,7 @@ function setup() {
     echo Error: Go not installed
     exit 1
   fi
-  if [[ ! -x $(which nvim) ]] || [[ ! -x $(which vim) ]]; then
+  if [[ ! -x $(which nvim) ]]; then
     echo Error: vim/nvim not installed
     exit 1
   fi
