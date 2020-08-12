@@ -135,9 +135,9 @@ alias grep="grep --color=auto"
 alias fgrep="fgrep --color=auto"
 alias egrep="egrep --color=auto"
 
-if [[ -x $(which hub) ]]; then
-	alias git="hub"
-fi
+# if [[ -x $(which hub) ]]; then
+# 	alias git="hub"
+# fi
 
 if [[ -x $(which nvim) ]]; then
 	alias vim="nvim"
