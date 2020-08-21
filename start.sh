@@ -69,7 +69,7 @@ function setup() {
   # Gopls for COC
   if [[ -x $(which go) ]] && [[ $(go version | grep 1.12) ]]; then
     echo '  -> setting up gopls for coc'
-    go get -u golang.org/x/tools/cmd/gopls
+    GO111MODULE=on go get golang.org/x/tools/gopls@latest
     if [[ -x $(which gopls) ]]; then
       echo '  -> gopls installed'
       echo '     "golang": {' >> "$dotfiles_folder"/coc-settings.json
