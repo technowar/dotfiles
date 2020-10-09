@@ -25,7 +25,7 @@ function setup() {
 
   # golangci_lint
   echo '  -> Installing golangci_lint'
-  go get -u github.com/golangci/golangci-lint/cmd/golangci-lint
+  GO111MODULE=on go get github.com/golangci/golangci-lint/cmd/golangci-lint
   echo '  -> golangci_lint installed'
 
   # install z.sh
@@ -69,7 +69,7 @@ function setup() {
   # Gopls for COC
   if [[ -x $(which go) ]] && [[ $(go version | grep 1.12) ]]; then
     echo '  -> setting up gopls for coc'
-    GO111MODULE=on go get golang.org/x/tools/gopls@latest
+    GO111MODULE=on go get golang.org/x/tools/gopls
     if [[ -x $(which gopls) ]]; then
       echo '  -> gopls installed'
       echo '     "golang": {' >> "$dotfiles_folder"/coc-settings.json
