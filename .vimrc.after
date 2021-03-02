@@ -152,7 +152,14 @@ if has("autocmd")
 	" Enable file type detection
 	filetype on
 	" Treat .json files as .js
-	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
+	autocmd BufNewFile,BufRead *.json set filetype=json syntax=javascript ts=2 sts=2 sw=2 expandtab
+	" Treat .overrides/.variables files as .css
+	autocmd BufNewFile,BufRead *.overrides set filetype=scss syntax=css ts=2 sts=2 sw=2 expandtab
+	autocmd BufNewFile,BufRead *.variables set filetype=scss syntax=css ts=2 sts=2 sw=2 expandtab
+	" Treat .[j|t]s/x files as .js
+	autocmd BufNewFile,BufRead *.ts set filetype=typescript syntax=javascript ts=2 sts=2 sw=2 expandtab
+	autocmd BufNewFile,BufRead *.tsx set filetype=typescript syntax=javascript ts=2 sts=2 sw=2 expandtab
+	autocmd BufNewFile,BufRead *.jsx set filetype=typescript syntax=javascript ts=2 sts=2 sw=2 expandtab
 endif
 
 " disable Background Color Erase (BCE) so that color schemes
