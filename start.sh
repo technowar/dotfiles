@@ -67,7 +67,7 @@ function setup() {
   echo '  "languageserver": {' >> "$dotfiles_folder"/coc-settings.json
 
   # Gopls for COC
-  if [[ -x $(which go) ]] && [[ $(go version | grep 1.12) ]]; then
+  if [[ -x $(which go) ]]; then
     echo '  -> setting up gopls for coc'
     GO111MODULE=on go get golang.org/x/tools/gopls
     if [[ -x $(which gopls) ]]; then
