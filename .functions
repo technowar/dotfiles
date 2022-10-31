@@ -291,3 +291,8 @@ function o() {
 		open "$@"
 	fi
 }
+
+# MacOS tags
+function tag() {
+	mdfind "tag:$1" | sort
+}
