@@ -147,21 +147,6 @@ noremap <leader>ss :call StripWhitespace()<CR>
 " Save a file as root (,W)
 noremap <leader>W :w !sudo tee % > /dev/null<CR>
 
-" Automatic commands
-if has("autocmd")
-	" Enable file type detection
-	filetype on
-	" Treat .json files as .js
-	autocmd BufNewFile,BufRead *.json set filetype=json syntax=javascript ts=2 sts=2 sw=2 expandtab
-	" Treat .overrides/.variables files as .css
-	autocmd BufNewFile,BufRead *.overrides set filetype=scss syntax=css ts=2 sts=2 sw=2 expandtab
-	autocmd BufNewFile,BufRead *.variables set filetype=scss syntax=css ts=2 sts=2 sw=2 expandtab
-	" Treat .[j|t]s/x files as .js
-	autocmd BufNewFile,BufRead *.ts set filetype=typescript syntax=javascript ts=2 sts=2 sw=2 expandtab
-	autocmd BufNewFile,BufRead *.tsx set filetype=typescript syntax=javascript ts=2 sts=2 sw=2 expandtab
-	autocmd BufNewFile,BufRead *.jsx set filetype=typescript syntax=javascript ts=2 sts=2 sw=2 expandtab
-endif
-
 " disable Background Color Erase (BCE) so that color schemes
 " render properly when inside 256-color tmux and GNU screen.
 " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
@@ -177,9 +162,6 @@ let g:multi_cursor_exit_from_insert_mode = 0
 " should fix issue on json quote
 let g:vim_json_syntax_conceal = 0
 
-" EMMET with tab expander FTW!
-autocmd FileType html,htmldjango,css,scss,sass imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
-
 " For Ack
 " Requires `ack` to be installed on your system
 " Make sure to rename `ack-grep` to `ack` on a debian plaftform
@@ -194,13 +176,26 @@ endif
 nmap <leader>a :tab split<CR>:Ack ""<Left>
 nmap <leader>A :tab split<CR>:Ack <C-r><C-w><CR>
 
-" Should fix tabs/space issues
-autocmd Filetype python,php setlocal ts=4 sts=4 sw=4 expandtab
-autocmd Filetype html,ruby,cucumber,javascript,json,jade,pug,sh,text,jsx,scala,css,scss setlocal ts=2 sts=2 sw=2 expandtab
-autocmd Filetype go setlocal ts=4 sts=4 sw=4 noexpandtab
+" Automatic commands
+if has("autocmd")
+	" Enable file type detection
+	filetype on
+	" Treat .json files as .js
+	autocmd BufNewFile,BufRead *.json setlocal filetype=json syntax=javascript
+	" Treat .overrides/.variables files as .css
+	autocmd BufNewFile,BufRead *.overrides,*.variables setlocal filetype=scss syntax=css
+	" Treat .[j|t]s/x files as .js
+	autocmd BufNewFile,BufRead *.jsx,*.ts,*.tsx setlocal filetype=typescript syntax=javascript
+endif
 
-" Enable cursorcolumn for `haml` files
+" Should fix tabs/space issues
+autocmd Filetype go setlocal ts=4 sts=4 sw=4 noexpandtab
 autocmd Filetype haml setlocal cursorcolumn
+autocmd Filetype php,python setlocal ts=4 sts=4 sw=4 expandtab
+autocmd Filetype css,cucumber,html,jade,javascript,json,pug,ruby,scala,scss,sh,text,typescript,vue setlocal ts=2 sts=2 sw=2 expandtab
+
+" EMMET with tab expander FTW!
+autocmd FileType html,htmldjango,css,scss,sass imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 " Trim extra space
 autocmd BufWritePre * %s/\s\+$//e
@@ -216,11 +211,11 @@ let g:NERDTreeHijackNetrw=0
 " vim-go specific settings
 let g:go_def_mode = 'gopls'
 let g:go_info_mode = 'gopls'
-let g:go_list_type = 'quickfix'
-let g:go_fmt_command = 'goimports'
-let g:go_snippet_engine = 'snipmate'
+let g:go_list_type = "quickfix"
+let g:go_fmt_command = "goimports"
+let g:go_snippet_engine = "snipmate"
 let g:go_highlight_fields = 1
-let g:go_metalinter_command = 'golangci-lint'
+let g:go_metalinter_command = "golangci-lint"
 let g:go_metalinter_autosave = 1
 let g:go_highlight_functions = 1
 
