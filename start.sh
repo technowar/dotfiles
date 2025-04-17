@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function tpm() {
-	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+	git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 }
 
 function z() {
@@ -15,7 +15,7 @@ function setup() {
 	fi
 
 	# Install Tmux Plugin Manager
-	if [ ! -d ~/.tmux/plugins/tpm ]; then
+	if [ ! -d ~/.config/tmux/plugins/tpm ]; then
 		echo ' ------------- installing Tmux Plugin Manager'
 		tpm
 		echo ' ------------- Tmux Plugin Manager installed'
