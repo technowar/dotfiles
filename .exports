@@ -19,6 +19,9 @@ export LESS_TERMCAP_md="$ORANGE"
 # Don’t clear the screen after quitting a manual page
 export MANPAGER="less -X"
 
+# Fix gpg issue
+export GPG_TTY=$(tty)
+
 if [[ -f ~/.exports.after ]]; then
 	source ~/.exports.after
 fi
