@@ -1,0 +1,22 @@
+# Git credentials
+# Not in the repository, to prevent people from accidentally committing under my name
+
+GIT_AUTHOR_NAME="Johmel Pintor"
+GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
+git config --global user.name "$GIT_AUTHOR_NAME"
+GIT_AUTHOR_EMAIL="jahmgwapo@gmail.com"
+GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
+git config --global user.email "$GIT_AUTHOR_EMAIL"
+
+# set PGP keyring if there is one for signed commits
+#
+#         List down available keys          NR==1 is the header
+GPG_ID="$(gpg --list-keys --keyid-format long | grep pub | awk 'NR==2{print $2}' | sed -e 's/^.*\///')"
+
+# Check if we get valid value
+#  then set user.signkey
+if [[ "${#GPG_ID}" -ge 8 ]]; then
+	git config --global user.signingkey "$GPG_ID"
+	git config --global gpg.program gpg
+	git config --global commit.gpgsign true
+fi
