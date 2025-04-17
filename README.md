@@ -1,6 +1,9 @@
 # dotfiles
 
-### Requirements
-* Ag
+### Prerequisites
 * Git
-* Stow
+* GNU Stow
+
+### Tools
+* asdf-vm
+* the_silver_searcher
