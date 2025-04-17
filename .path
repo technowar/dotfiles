@@ -1,0 +1,5 @@
+# Add `~/bin`
+export PATH="$HOME/bin:$PATH"
+
+# Add asdf shims
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
