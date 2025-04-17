@@ -16,7 +16,6 @@ _darcs
 \.hg
 
 \.git
-\.gitignore
 \.gitmodules
 
 .+~          # emacs backup files
@@ -25,5 +24,3 @@ _darcs
 ^/README.*
 ^/LICENSE.*
 ^/COPYING
-
-start.sh
