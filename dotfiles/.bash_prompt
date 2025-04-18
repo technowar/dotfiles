@@ -1,8 +1,5 @@
-#/usr/bin/env bash
-
 if tput setaf 1 &> /dev/null; then
 	tput sgr0 &> /dev/null
-
 	if [[ $(tput colors) -ge 256 ]] 2>/dev/null; then
 		ORANGE=$(tput setaf 172)
 		PURPLE=$(tput setaf 141)
@@ -42,6 +39,5 @@ function git_info() {
 	echo -e $branch$dirty" "
 }
 
-export PS1="\n\[$BLUE\]\w\[$RESET\]\
-\n\$([[ -n \$(git branch 2> /dev/null) ]] && echo \"\[$PURPLE\] \")$(git_info)\[$WHITE\]%\[$RESET\] "
+export PS1="\n\[$BLUE\]\w\[$RESET\]\n\$([[ -n \$(git branch 2> /dev/null) ]] && echo \"\[$PURPLE\] \")\$(git_info)\[$WHITE\]%\[$RESET\] "
 export PS2="\[$ORANGE\]→ \[$RESET\]"
