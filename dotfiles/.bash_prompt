@@ -43,6 +43,5 @@ function git_info() {
 }
 
 export PS1="\n\[$BLUE\]\w\[$RESET\]\
-\n\$([[ -n \$(git branch 2> /dev/null) ]] && \
-echo \"\[$PURPLE\] \")$(git_info)\[$WHITE\]%\[$RESET\] "
+\n\$([[ -n \$(git branch 2> /dev/null) ]] && echo \"\[$PURPLE\] \")$(git_info)\[$WHITE\]%\[$RESET\] "
 export PS2="\[$ORANGE\]→ \[$RESET\]"
