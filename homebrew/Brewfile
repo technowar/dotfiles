@@ -1,0 +1,3 @@
+brew "asdf"
+brew "stow"
+brew "the_silver_searcher"

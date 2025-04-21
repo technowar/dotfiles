@@ -7,7 +7,9 @@ done
 unset file
 
 # asdf completion
-. <(asdf completion bash)
+if [ ! -x $(which asdf) ]; then
+	. <(asdf completion bash)
+fi
 
 # z
 . ~/.bin/z/z.sh
@@ -30,4 +32,8 @@ done
 
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
-[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+[ -r "/usr/local/etc/profile.d/bash_completion.sh" ] && . "/usr/local/etc/profile.d/bash_completion.sh"
+
+if [ "$(uname -s)" == "Linux" ]; then
+	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi

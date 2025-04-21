@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+function homebrew() {
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+}
+
 function tpm() {
 	git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 }
@@ -10,8 +14,16 @@ function z() {
 
 function setup() {
 	if [ ! -x $(which git) ]; then
-		echo Error: git not installed
+		echo Error: git is not installed
 		exit 1
+	fi
+
+	if [ ! -x $(which brew) ]; then
+		echo ' ------------- installing Homebrew'
+		homebrew
+		echo ' ------------- Homebrew installed'
+	else
+		echo ' ------------- Homebrew is already installed'
 	fi
 
 	# Install Tmux Plugin Manager
@@ -35,6 +47,7 @@ function setup() {
 
 setup
 
+unset homebrew
 unset tpm
 unset z
 unset setup
