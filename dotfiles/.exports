@@ -26,5 +26,5 @@ export GPG_TTY=$(tty)
 export TERM=screen-256color
 
 if [[ -f ~/.exports.after ]]; then
-	source ~/.exports.after
+  source ~/.exports.after
 fi

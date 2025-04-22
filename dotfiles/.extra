@@ -16,7 +16,7 @@ GPG_ID="$(gpg --list-keys --keyid-format long | grep pub | awk 'NR==2{print $2}'
 # Check if we get valid value
 #  then set user.signkey
 if [[ "${#GPG_ID}" -ge 8 ]]; then
-	git config --global user.signingkey "$GPG_ID"
-	git config --global gpg.program gpg
-	git config --global commit.gpgsign true
+  git config --global user.signingkey "$GPG_ID"
+  git config --global gpg.program gpg
+  git config --global commit.gpgsign true
 fi

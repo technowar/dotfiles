@@ -1,126 +1,127 @@
 [alias]
-	# Add files to commit
-	a = add
-	# Display local branches
-	b = branch
-	# Display all branches
-	ba = branch -a
-	# Delete branch
-	bd = branch -d
-	# Force delete branch
-	bfd = branch -D
-	# Commit
-	cm = commit -m
-	# Commit all
-	cam = commit -am
-	# Ammend commit
-	camend = commit --amend --no-edit
-	# Checkout
-	co = checkout
-	# Checkout branch
-	cob = checkout -b
-	# Cherry-pick
-	cp = cherry-pick
-	# Show changes
-	d = diff
-	# Fetch current branch
-	f = fetch
-	# Fetch all branches
-	fall = fetch --all
-	# Log
-	l = log --graph --pretty=format:'%Cred%h%Creset (%an) -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-	# Rebase on pull
-	prebase = pull --rebase
-	# Push commits
-	p = push
-	# Force push commits
-	pf = push -f
-	# Create upstream on push
-	pu = push -u
-	# Add remote
-	ra = remote add
-	# Rebase
-	rb = rebase
-	# Hard reset
-	rh = reset --hard
-	# Soft reset
-	rs = reset --soft
-	# Remove remote
-	rrm = remote remove
-	# Display all remotes
-	rv = remote -v
-	# View status
-	s = status
-	# Stash changes
-	st = stash
-	# Drop stash changes
-	std = stash drop
-	# List stash changes
-	stl = stash list
-	# Pop stash changes
-	stp = stash pop
-	# Show tags
-	t = tag -l
+  # Add files to commit
+  a = add
+  # Display local branches
+  b = branch
+  # Display all branches
+  ba = branch -a
+  # Delete branch
+  bd = branch -d
+  # Force delete branch
+  bfd = branch -D
+  # Commit
+  cm = commit -m
+  # Commit all
+  cam = commit -am
+  # Ammend commit
+  camend = commit --amend --no-edit
+  # Checkout
+  co = checkout
+  # Checkout branch
+  cob = checkout -b
+  # Cherry-pick
+  cp = cherry-pick
+  # Show changes
+  d = diff
+  # Fetch current branch
+  f = fetch
+  # Fetch all branches
+  fall = fetch --all
+  # Log
+  l = log --graph --pretty=format:'%Cred%h%Creset (%an) -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  # Rebase on pull
+  prebase = pull --rebase
+  # Push commits
+  p = push
+  # Force push commits
+  pf = push -f
+  # Create upstream on push
+  pu = push -u
+  # Add remote
+  ra = remote add
+  # Rebase
+  rb = rebase
+  # Hard reset
+  rh = reset --hard
+  # Soft reset
+  rs = reset --soft
+  # Remove remote
+  rrm = remote remove
+  # Display all remotes
+  rv = remote -v
+  # View status
+  s = status
+  # Stash changes
+  st = stash
+  # Drop stash changes
+  std = stash drop
+  # List stash changes
+  stl = stash list
+  # Pop stash changes
+  stp = stash pop
+  # Show tags
+  t = tag -l
 
 [apply]
-	# Detect whitespace errors when applying a patch
-	whitespace = warn
+  # Detect whitespace errors when applying a patch
+  whitespace = warn
 
 [core]
-	# Use custom `.gitignore` and `.gitattributes`
-	excludesfile = ~/.gitignore
-	attributesfile = ~/.gitattributes
-	# Treat spaces before tabs, lines that are indented with 8 or more spaces, and
-	# all kinds of trailing whitespace as an error.
-	# [default] trailing-space: looks for spaces at the end of a line
-	# [default] space-before-tab: looks for spaces before tabs at the beginning of
-	# a line
-	whitespace = space-before-tab,indent-with-non-tab,trailing-space
+  # Use custom `.gitignore` and `.gitattributes`
+  excludesfile = ~/.gitignore
+  attributesfile = ~/.gitattributes
+  # Treat spaces before tabs, lines that are indented with 8 or more spaces, and
+  # all kinds of trailing whitespace as an error.
+  # [default] trailing-space: looks for spaces at the end of a line
+  # [default] space-before-tab: looks for spaces before tabs at the beginning of
+  # a line
+  whitespace = space-before-tab,indent-with-non-tab,trailing-space
 
 [color]
-	# Use colors in Git commands that are capable of colored output when
-	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
-	ui = auto
+  # Use colors in Git commands that are capable of colored output when
+  # outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
+  ui = auto
 
 [color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
+  current = yellow reverse
+  local = yellow
+  remote = green
 
 [color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
 
 [color "status"]
-	added = yellow
-	changed = green
-	untracked = cyan
+  added = yellow
+  changed = green
+  untracked = cyan
 
 [merge]
-	# Include summaries of merged commits in newly created merge commit messages
-	log = true
+  # Include summaries of merged commits in newly created merge commit messages
+  log = true
 
 # URL shorthands
 [url "git@github.com:"]
-	insteadOf = "gh:"
-	pushInsteadOf = "github:"
-	pushInsteadOf = "git://github.com/"
+  insteadOf = "gh:"
+  pushInsteadOf = "github:"
+  pushInsteadOf = "git://github.com/"
 
 [url "git://github.com/"]
-	insteadOf = "github:"
+  insteadOf = "github:"
 
 [url "git@gist.github.com:"]
-	insteadOf = "gst:"
-	pushInsteadOf = "gist:"
-	pushInsteadOf = "git://gist.github.com/"
+  insteadOf = "gst:"
+  pushInsteadOf = "gist:"
+  pushInsteadOf = "git://gist.github.com/"
 
 [url "git://gist.github.com/"]
-	insteadOf = "gist:"
+  insteadOf = "gist:"
 
 [push]
-	default = matching
+  default = matching
+
 [user]
 	name = Johmel Pintor
 	email = jahmgwapo@gmail.com

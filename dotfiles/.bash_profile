@@ -2,13 +2,13 @@
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
 for file in ~/.{path,aliases,bash_prompt,exports,extra,functions}; do
-	[ -r "$file" ] && [ -f "$file" ] && source "$file"
+  [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file
 
 # asdf completion
 if [ ! -x "$(command -v asdf)" ]; then
-	. <(asdf completion bash)
+  . <(asdf completion bash)
 fi
 
 # z
@@ -27,7 +27,7 @@ shopt -s cdspell
 # * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
 # * Recursive globbing, e.g. `echo **/*.txt`
 for option in autocd globstar; do
-	shopt -s "$option" 2> /dev/null
+  shopt -s "$option" 2> /dev/null
 done
 
 # If possible, add tab completion for many more commands

@@ -7,9 +7,9 @@ alias reboot='sudo reboot'
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
-	colorflag="--color"
+  colorflag="--color"
 else # OS X `ls`
-	colorflag="-G"
+  colorflag="-G"
 fi
 
 # List all files colorized in long format
@@ -35,5 +35,5 @@ alias fgrep="fgrep --color=auto"
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
 if [[ -x $(which nvim) ]]; then
-	alias vim="nvim"
+  alias vim="nvim"
 fi
