@@ -13,12 +13,12 @@ function z() {
 }
 
 function setup() {
-	if [ ! -x $(which git) ]; then
+	if [ ! -x "$(command -v git)" ]; then
 		echo Error: git is not installed
 		exit 1
 	fi
 
-	if [ ! -x $(which brew) ]; then
+	if [ ! -x "$(command -v brew)" ]; then
 		echo ' ------------- installing Homebrew'
 		homebrew
 		echo ' ------------- Homebrew installed'

@@ -7,7 +7,7 @@ done
 unset file
 
 # asdf completion
-if [ ! -x $(which asdf) ]; then
+if [ ! -x "$(command -v asdf)" ]; then
 	. <(asdf completion bash)
 fi
 
@@ -33,7 +33,3 @@ done
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
 [ -r "/usr/local/etc/profile.d/bash_completion.sh" ] && . "/usr/local/etc/profile.d/bash_completion.sh"
-
-if [ "$(uname -s)" == "Linux" ]; then
-	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-fi
