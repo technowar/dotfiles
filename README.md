@@ -8,5 +8,5 @@
 * asdf-vm
 * gnu stow
 * neovim
-* the_silver_searcher
+* ripgrep
 * tmux
