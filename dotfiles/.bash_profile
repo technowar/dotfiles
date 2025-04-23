@@ -6,14 +6,6 @@ for file in ~/.{path,aliases,bash_prompt,exports,extra,functions}; do
 done
 unset file
 
-# asdf completion
-if [ ! -x "$(command -v asdf)" ]; then
-  . <(asdf completion bash)
-fi
-
-# z
-. ~/.bin/z/z.sh
-
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 

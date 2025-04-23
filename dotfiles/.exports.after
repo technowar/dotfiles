@@ -1,0 +1,12 @@
+# asdf completion
+if [ -x "$(command -v asdf)" ]; then
+  . <(asdf completion bash)
+fi
+
+# load go
+if [ -x "$(command -v go)" ]; then
+  . ${ASDF_DATA_DIR:-$HOME}/plugins/golang/set-env.bash
+fi
+
+# z
+. ~/.bin/z/z.sh
