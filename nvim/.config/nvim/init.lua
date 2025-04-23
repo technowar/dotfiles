@@ -9,3 +9,6 @@ require("config.autocmd")
 
 -- Load lazy.vim
 require("config.lazy")
+
+-- Load lualine
+require("config.lualine")
