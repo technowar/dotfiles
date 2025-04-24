@@ -4,6 +4,9 @@
 * Git
 * Homebrew
 
+### Optional
+* GitHub Copilot
+
 ### Tools
 * asdf-vm
 * gnu stow

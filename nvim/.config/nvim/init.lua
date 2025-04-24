@@ -16,10 +16,13 @@ require("config.cmp")
 -- Load conform
 require("config.conform")
 
+-- Load copilot
+require("config.copilot")
+
 -- Load lsp
 require("config.lsp-config")
 require("config.mason")
-require("config.mason-lspconfig")
+require("config.mason-lsp")
 
 -- Load lualine
 require("config.lualine")
