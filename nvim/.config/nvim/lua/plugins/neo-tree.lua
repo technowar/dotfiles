@@ -5,11 +5,5 @@ return {
 		"nvim-lua/plenary.nvim",
 		"MunifTanjim/nui.nvim",
 	},
-	lazy = false, -- neo-tree will lazily load itself
-	---@module "neo-tree"
-	---@type neotree.Config?
-	opts = {
-		-- fill any relevant options here
-		vim.keymap.set("n", "<leader>n", ":Neotree toggle<CR>", {}),
-	},
+	lazy = false,
 }

@@ -20,7 +20,6 @@ require("config.conform")
 require("config.lsp-config")
 require("config.mason")
 require("config.mason-lspconfig")
-require("config.nvim-lspconfig")
 
 -- Load lualine
 require("config.lualine")
@@ -30,3 +29,6 @@ require("config.telescope")
 
 -- Load hreesitter
 require("config.treesitter")
+
+-- Load plugin keymap
+require("config.plugin-keymap")

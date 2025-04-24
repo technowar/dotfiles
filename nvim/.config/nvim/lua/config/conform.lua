@@ -1,17 +1,18 @@
 require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
-		javascript = { "eslint_d", "prettier" },
+		javascript = { "prettier", stop_after_first = true },
+		["*"] = { "codespell" },
+		["_"] = { "trim_newlines", "trim_whitespace" },
 	},
+	default_format_ops = { lsp_format = "fallback" },
 	format_on_save = {
-		timeout_ms = 500,
 		lsp_format = "fallback",
+		timeout_ms = 500,
 	},
-})
-
-vim.api.nvim_create_autocmd("BufWritePre", {
-	pattern = "*",
-	callback = function(args)
-		require("conform").format({ bufnr = args.buf })
-	end,
+	formatters = {
+		shfmt = {
+			prepend_args = { "-i", "2" },
+		},
+	},
 })
