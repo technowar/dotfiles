@@ -5,7 +5,7 @@ function homebrew() {
 }
 
 function tgpt() {
-  curl -sSL https://raw.githubusercontent.com/aandrew-me/tgpt/main/install | /bin/bash -s /usr/local/bin
+  curl -sSL https://raw.githubusercontent.com/aandrew-me/tgpt/main/install | /bin/bash -s ~/.bin/tgpt
 }
 
 function tpm() {
@@ -20,24 +20,6 @@ function setup() {
   if [ ! -x "$(command -v git)" ]; then
     echo Error: git is not installed
     exit 1
-  fi
-
-  # Install Homebrew
-  if [ ! -x "$(command -v brew)" ]; then
-    echo ' ------------- installing Homebrew'
-    homebrew
-    echo ' ------------- Homebrew installed'
-  else
-    echo ' ------------- Homebrew is already installed'
-  fi
-
-  # Install tgpt
-  if [ ! -x "$(command -v tgpt)" ]; then
-    echo ' ------------- installing tgpt'
-    tgpt
-    echo ' ------------- tgpt installed'
-  else
-    echo ' ------------- tgpt is already installed'
   fi
 
   # Install tpm
@@ -57,12 +39,30 @@ function setup() {
   else
     echo ' ------------- z is already installed'
   fi
+
+  # Install Homebrew
+  if [ ! -x "$(command -v brew)" ]; then
+    echo ' ------------- installing Homebrew'
+    homebrew
+    echo ' ------------- Homebrew installed'
+  else
+    echo ' ------------- Homebrew is already installed'
+  fi
+
+  # Install tgpt
+  if [ ! -x "$(command -v tgpt)" ]; then
+    echo ' ------------- installing tgpt'
+    tgpt
+    echo ' ------------- tgpt installed'
+  else
+    echo ' ------------- tgpt is already installed'
+  fi
 }
 
 setup
 
-unset homebrew
-unset tgpt
 unset tpm
 unset z
+unset homebrew
+unset tgpt
 unset setup
