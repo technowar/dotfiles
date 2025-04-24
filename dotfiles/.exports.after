@@ -5,7 +5,7 @@ fi
 
 # load go
 if [ -x "$(command -v go)" ]; then
-  . ${ASDF_DATA_DIR:-$HOME}/plugins/golang/set-env.bash
+  . ${ASDF_DATA_DIR}/plugins/golang/set-env.bash
 fi
 
 # z
