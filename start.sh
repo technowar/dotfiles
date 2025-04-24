@@ -4,6 +4,10 @@ function homebrew() {
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 }
 
+function tgpt() {
+  curl -sSL https://raw.githubusercontent.com/aandrew-me/tgpt/main/install | /bin/bash -s /usr/local/bin
+}
+
 function tpm() {
   git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 }
@@ -18,6 +22,7 @@ function setup() {
     exit 1
   fi
 
+  # Install Homebrew
   if [ ! -x "$(command -v brew)" ]; then
     echo ' ------------- installing Homebrew'
     homebrew
@@ -26,28 +31,38 @@ function setup() {
     echo ' ------------- Homebrew is already installed'
   fi
 
-  # Install Tmux Plugin Manager
-  if [ ! -d ~/.config/tmux/plugins/tpm ]; then
-    echo ' ------------- installing Tmux Plugin Manager'
-    tpm
-    echo ' ------------- Tmux Plugin Manager installed'
+  # Install tgpt
+  if [ ! -x "$(command -v tgpt)" ]; then
+    echo ' ------------- installing tgpt'
+    tgpt
+    echo ' ------------- tgpt installed'
   else
-    echo ' ------------- Tmux Plugin Manager is already installed'
+    echo ' ------------- tgpt is already installed'
   fi
 
-  # Install Z
-  if [ ! -d ~/.bin/z ]; then
-    echo ' ------------- installing Z'
-    z
-    echo ' ------------- Z installed'
+  # Install tpm
+  if [ ! -d ~/.config/tmux/plugins/tpm ]; then
+    echo ' ------------- installing tpm'
+    tpm
+    echo ' ------------- tpm installed'
   else
-    echo ' ------------- Z is already installed'
+    echo ' ------------- tpm is already installed'
+  fi
+
+  # Install z
+  if [ ! -d ~/.bin/z ]; then
+    echo ' ------------- installing z'
+    z
+    echo ' ------------- z installed'
+  else
+    echo ' ------------- z is already installed'
   fi
 }
 
 setup
 
 unset homebrew
+unset tgpt
 unset tpm
 unset z
 unset setup
