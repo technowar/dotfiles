@@ -1,6 +1,15 @@
 -- Assign set to vim.opt
 local set = vim.opt
 
+-- Mouse
+set.mouse = a
+
+-- Use OS clipboard
+set.clipboard = unnamed
+
+-- Set syntax
+set.syntax = on
+
 -- Don’t add empty newline at the end of files
 set.endofline = false
 
@@ -22,6 +31,7 @@ set.modelines = 4
 
 -- Set relativenumber
 set.relativenumber = true
+set.number = true
 
 -- Highlight current line
 set.cursorline = true
@@ -55,3 +65,6 @@ set.signcolumn = yes
 
 -- Set filetype
 set.filetype = on
+
+-- All matches in a line are substituted
+set.gdefault = true
