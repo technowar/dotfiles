@@ -19,7 +19,7 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 
 -- JS/TS files
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-	pattern = { "*.jsx", "*.ts", "*.tsx" },
+	pattern = { "*.js", "*.jsx", "*.ts", "*.tsx" },
 	callback = function()
 		vim.opt_local.filetype = typescript
 		vim.opt_local.syntax = javascript
