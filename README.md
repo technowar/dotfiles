@@ -15,6 +15,8 @@
             // TODO: Use mason-tool-installer.nvim
             * codespell
             * prettier
+            * shellcheck
+            * shfmt
             * stylua
 
     * nodejs
