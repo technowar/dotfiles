@@ -12,3 +12,13 @@ function v() {
 function tag() {
   mdfind "tag:$1" | sort
 }
+
+# Grammar checker using tgpt
+function grammar() {
+  if [ $# -eq 0 ]; then
+    echo "Usage: grammar <text>"
+    return 1
+  elif  [ -x "$(command -v tgpt)" ]; then
+    tgpt "Correct my grammar: '$*'"
+  fi
+}
