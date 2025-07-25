@@ -1,4 +1,21 @@
 require("telescope").setup({
+	defaults = {
+		file_ignore_patterns = {
+			"node_modules",
+			".git/",
+			".cache/",
+			".DS_Store",
+			"%.jpg",
+			"%.jpeg",
+			"%.png",
+			"%.svg",
+			"%.webp",
+			"%.gif",
+			"%.ico",
+			"%.otf",
+			"%.ttf",
+		},
+	},
 	pickers = {
 		find_files = {
 			hidden = true,
