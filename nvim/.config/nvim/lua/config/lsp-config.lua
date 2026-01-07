@@ -1,8 +1,10 @@
-local lspconfig = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
-lspconfig.gopls.setup({
+vim.lsp.config("emmet_language_server", {
 	capabilities = capabilities,
-	root_dir = lspconfig.util.root_pattern("go.mod", "go.work", ".git"),
+})
+vim.lsp.config("gopls", {
+	capabilities = capabilities,
+	root_dir = require("lspconfig.util").root_pattern("go.mod", "go.work", ".git"),
 	settings = {
 		gopls = {
 			analyses = {
@@ -13,12 +15,11 @@ lspconfig.gopls.setup({
 		},
 	},
 })
-lspconfig.lua_ls.setup({
+vim.lsp.config("lua_ls", {
 	capabilities = capabilities,
 })
-lspconfig.ts_ls.setup({
+vim.lsp.config("ts_ls", {
 	capabilities = capabilities,
 })
-lspconfig.emmet_language_server.setup({
-	capabilities = capabilities,
-})
+
+vim.lsp.enable({ "emmet_language_server", "gopls", "lua_ls", "ts_ls" })
