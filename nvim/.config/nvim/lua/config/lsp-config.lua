@@ -1,7 +1,10 @@
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
+--- Emmet
 vim.lsp.config("emmet_language_server", {
 	capabilities = capabilities,
 })
+
+--- Gopls
 vim.lsp.config("gopls", {
 	capabilities = capabilities,
 	root_dir = require("lspconfig.util").root_pattern("go.mod", "go.work", ".git"),
@@ -15,9 +18,13 @@ vim.lsp.config("gopls", {
 		},
 	},
 })
+
+--- Lua
 vim.lsp.config("lua_ls", {
 	capabilities = capabilities,
 })
+
+--- JS/TS
 vim.lsp.config("ts_ls", {
 	capabilities = capabilities,
 })
