@@ -8,8 +8,7 @@
 * GitHub Copilot
 
 ### Tools
-* [asdf-vm](https://asdf-vm.com)
-    * golang
+* [mise](https://mise.jdx.dev)
     * neovim
         * Mason
             // TODO: Use mason-tool-installer.nvim
@@ -20,9 +19,19 @@
             * stylua
 
     * nodejs
+    * [ripgrep](https://github.com/BurntSushi/ripgrep)
     * tmux
 * [gnu stow](https://www.gnu.org/software/stow)
-* [ripgrep](https://github.com/BurntSushi/ripgrep)
 * [tgpt](https://github.com/aandrew-me/tgpt)
 * [tpm](https://github.com/tmux-plugins/tpm)
 * [z](https://github.com/rupa/z)
+
+####
+Run start
+> $ ./start.sh
+
+Install Brew
+> $ brew bundle
+
+Run stow
+> $ stow -t <target_path> <package_name>
