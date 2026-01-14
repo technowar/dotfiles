@@ -1,13 +1,23 @@
 # dotfiles
 
-### Prerequisites
+### Getting started
+Run start
+> $ ./start.sh
+
+Install Brew
+> $ brew bundle
+
+Run stow
+> $ stow -t <target_path> <package_name>
+
+#### Prerequisites
 * Git
 * Homebrew
 
-### Optional
+##### Optional
 * GitHub Copilot
 
-### Tools
+#### Tools installed
 * [mise](https://mise.jdx.dev)
     * go
     * nodejs
@@ -25,13 +35,3 @@
 * [tgpt](https://github.com/aandrew-me/tgpt)
 * [tpm](https://github.com/tmux-plugins/tpm)
 * [z](https://github.com/rupa/z)
-
-####
-Run start
-> $ ./start.sh
-
-Install Brew
-> $ brew bundle
-
-Run stow
-> $ stow -t <target_path> <package_name>
