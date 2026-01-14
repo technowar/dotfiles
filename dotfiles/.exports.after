@@ -1,11 +1,6 @@
-# asdf completion
-if [ -x "$(command -v asdf)" ]; then
-  . <(asdf completion bash)
-fi
-
-# load go
-if [ -x "$(command -v go)" ]; then
-  . ${ASDF_DATA_DIR}/plugins/golang/set-env.bash
+# mise
+if [ -x "$(command -v mise)" ]; then
+  eval "$(mise activate bash)"
 fi
 
 # z

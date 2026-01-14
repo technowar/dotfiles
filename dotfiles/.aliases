@@ -35,11 +35,7 @@ alias fgrep="fgrep --color=auto"
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
 # Use Neovim
-if [[ -x $(which nvim) ]]; then
-  alias vim="nvim"
-fi
+alias vim="nvim"
 
 # Kubernetes
-if [[ -x $(which kubectl) ]]; then
-  alias k="kubectl"
-fi
+alias k="kubectl"

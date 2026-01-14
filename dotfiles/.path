@@ -4,12 +4,9 @@ elif [[ $OSTYPE =~ ^darwin ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-# Add asdf
-export ASDF_DATA_DIR=$HOME/.asdf
-
 # Add bin
 export BIN=$HOME/bin
 export DOTBIN=$HOME/.bin
 
 # Add to $PATH
-export PATH=$ASDF_DATA_DIR/shims:$BIN:$DOTBIN:$PATH
+export PATH=$BIN:$DOTBIN:$PATH
