@@ -4,9 +4,12 @@ elif [[ $OSTYPE =~ ^darwin ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+# GOPATH
+export GOPATH=$HOME/Documents/Projects/go
+
 # Add bin
 export BIN=$HOME/bin
 export DOTBIN=$HOME/.bin
 
 # Add to $PATH
-export PATH=$BIN:$DOTBIN:$PATH
+export PATH=$GOPATH/bin:$BIN:$DOTBIN:$PATH
