@@ -1,5 +1,5 @@
 return {
-	"stevearc/conform.nvim",
-	cmd = "ConformInfo",
-	event = "BufWritePre",
+  "stevearc/conform.nvim",
+  cmd = "ConformInfo",
+  event = "BufWritePre",
 }

@@ -9,6 +9,8 @@
 
 ### Tools
 * [mise](https://mise.jdx.dev)
+    * go
+    * nodejs
     * neovim
         * Mason
             // TODO: Use mason-tool-installer.nvim
@@ -17,9 +19,7 @@
             * shellcheck
             * shfmt
             * stylua
-
-    * nodejs
-    * [ripgrep](https://github.com/BurntSushi/ripgrep)
+    * ripgrep
     * tmux
 * [gnu stow](https://www.gnu.org/software/stow)
 * [tgpt](https://github.com/aandrew-me/tgpt)
