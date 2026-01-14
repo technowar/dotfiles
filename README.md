@@ -25,10 +25,15 @@ Run stow
         * Mason
             // TODO: Use mason-tool-installer.nvim
             * codespell
+            * eslint_d
+            * gofmt
+            * goimports
             * prettier
             * shellcheck
             * shfmt
             * stylua
+            * trim_newlines
+            * trim_whitespace
     * ripgrep
     * tmux
 * [gnu stow](https://www.gnu.org/software/stow)
