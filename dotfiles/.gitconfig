@@ -13,7 +13,7 @@
   cm = commit -m
   # Commit all
   cam = commit -am
-  # Ammend commit
+  # Amend commit
   camend = commit --amend --no-edit
   # Checkout
   co = checkout
