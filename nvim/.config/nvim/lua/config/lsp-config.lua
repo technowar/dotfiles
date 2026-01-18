@@ -28,4 +28,24 @@ vim.lsp.config("ts_ls", {
 	capabilities = capabilities,
 })
 
-vim.lsp.enable({ "emmet_language_server", "gopls", "lua_ls", "ts_ls" })
+--- Yaml
+vim.lsp.config("yamlls", {
+	capabilities = capabilities,
+	settings = {
+		schemaStore = {
+			enable = true,
+			url = "https://www.schemastore.org/api/json/catalog.json",
+		},
+		schemas = {
+			["kubernetes"] = "*.k8s.yaml",
+		},
+		format = {
+			enable = true,
+		},
+		validate = true,
+		completion = true,
+		hover = true,
+	},
+})
+
+vim.lsp.enable({ "emmet_language_server", "gopls", "lua_ls", "ts_ls", "yamlls" })

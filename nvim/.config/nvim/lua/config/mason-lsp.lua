@@ -4,5 +4,6 @@ require("mason-lspconfig").setup({
 		"gopls",
 		"lua_ls",
 		"ts_ls",
+		"yamlls",
 	},
 })
