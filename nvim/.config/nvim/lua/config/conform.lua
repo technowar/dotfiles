@@ -17,6 +17,8 @@ require("conform").setup({
 		javascriptreact = { "prettier", "eslint_d" },
 		typescript = { "prettier", "eslint_d" },
 		typescriptreact = { "prettier", "eslint_d" },
+
+		--- Others
 		["*"] = { "codespell" },
 		["_"] = { "trim_newlines", "trim_whitespace" },
 	},

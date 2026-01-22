@@ -37,7 +37,7 @@ vim.lsp.config("yamlls", {
 			url = "https://www.schemastore.org/api/json/catalog.json",
 		},
 		schemas = {
-			["kubernetes"] = "*.k8s.yaml",
+			["kubernetes"] = "*.yaml",
 		},
 		format = {
 			enable = true,
