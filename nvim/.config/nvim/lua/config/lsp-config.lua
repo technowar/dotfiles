@@ -1,12 +1,11 @@
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
---- Emmet
-vim.lsp.config("emmet_language_server", {
-	capabilities = capabilities,
+-- Apply cmp capabilities to every LSP server
+vim.lsp.config("*", {
+	capabilities = require("cmp_nvim_lsp").default_capabilities(),
 })
 
 --- Gopls
 vim.lsp.config("gopls", {
-	capabilities = capabilities,
+	filetypes = { "go", "gomod", "gowork" },
 	settings = {
 		gopls = {
 			analyses = {
@@ -18,34 +17,36 @@ vim.lsp.config("gopls", {
 	},
 })
 
---- Lua
-vim.lsp.config("lua_ls", {
-	capabilities = capabilities,
-})
-
---- JS/TS
-vim.lsp.config("ts_ls", {
-	capabilities = capabilities,
-})
-
 --- Yaml
 vim.lsp.config("yamlls", {
-	capabilities = capabilities,
+	filetypes = { "yaml" },
 	settings = {
-		schemaStore = {
-			enable = true,
-			url = "https://www.schemastore.org/api/json/catalog.json",
+		yaml = {
+			schemaStore = {
+				enable = true,
+				url = "https://www.schemastore.org/api/json/catalog.json",
+			},
+			-- Only apply the Kubernetes schema to matching files, not every .yaml
+			schemas = {
+				kubernetes = {
+					"k8s/**/*.{yaml,yml}",
+					"k8s-server/**/*.{yaml,yml}",
+				},
+			},
+			validate = true,
+			completion = true,
+			hover = true,
+			format = {
+				enable = true,
+			},
 		},
-		schemas = {
-			["kubernetes"] = "*.yaml",
-		},
-		format = {
-			enable = true,
-		},
-		validate = true,
-		completion = true,
-		hover = true,
 	},
 })
 
-vim.lsp.enable({ "emmet_language_server", "gopls", "lua_ls", "ts_ls", "yamlls" })
+vim.lsp.enable({
+	"emmet_language_server",
+	"gopls",
+	"lua_ls",
+	"ts_ls",
+	"yamlls",
+})

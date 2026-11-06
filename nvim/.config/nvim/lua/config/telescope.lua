@@ -2,18 +2,18 @@ require("telescope").setup({
 	defaults = {
 		file_ignore_patterns = {
 			"node_modules",
-			".git/",
-			".cache/",
-			".DS_Store",
-			"%.jpg",
-			"%.jpeg",
-			"%.png",
-			"%.svg",
-			"%.webp",
-			"%.gif",
-			"%.ico",
-			"%.otf",
-			"%.ttf",
+			"%.git/",
+			"%.cache/",
+			"%.DS_Store",
+			"%.jpg$",
+			"%.jpeg$",
+			"%.png$",
+			"%.svg$",
+			"%.webp$",
+			"%.gif$",
+			"%.ico$",
+			"%.otf$",
+			"%.ttf$",
 		},
 	},
 	pickers = {
@@ -21,10 +21,10 @@ require("telescope").setup({
 			hidden = true,
 		},
 		grep_string = {
-			additional_args = { "--hidden" },
+			additional_args = { "--hidden", "--glob=!.git/" },
 		},
 		live_grep = {
-			additional_args = { "--hidden" },
+			additional_args = { "--hidden", "--glob=!.git/" },
 		},
 	},
 })

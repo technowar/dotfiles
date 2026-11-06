@@ -1,35 +1,17 @@
--- Buffer
--- JSON files
-vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-	pattern = { "*.json" },
-	callback = function()
-		vim.opt_local.filetype = json
-		vim.opt_local.syntax = javascript
-	end,
+-- Custom filetype detection
+vim.filetype.add({
+	extension = {
+		overrides = "scss",
+		variables = "scss",
+	},
 })
 
--- CSS files
-vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-	pattern = { "*.overrides", "*.variables" },
-	callback = function()
-		vim.opt_local.filetype = scss
-		vim.opt_local.syntax = css
-	end,
-})
+local group = vim.api.nvim_create_augroup("UserFiletypeSettings", { clear = true })
 
--- JS/TS files
-vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-	pattern = { "*.jsx", "*.ts", "*.tsx" },
-	callback = function()
-		vim.opt_local.filetype = typescript
-		vim.opt_local.syntax = javascript
-	end,
-})
-
--- FileType
--- Go files
-vim.api.nvim_create_autocmd({ "FileType" }, {
-	pattern = { "go" },
+-- Go: tabs
+vim.api.nvim_create_autocmd("FileType", {
+	group = group,
+	pattern = "go",
 	callback = function()
 		vim.opt_local.shiftwidth = 4
 		vim.opt_local.softtabstop = 4
@@ -38,8 +20,9 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	end,
 })
 
--- PHP/Python files
-vim.api.nvim_create_autocmd({ "FileType" }, {
+-- PHP/Python: 4 spaces
+vim.api.nvim_create_autocmd("FileType", {
+	group = group,
 	pattern = { "php", "python" },
 	callback = function()
 		vim.opt_local.shiftwidth = 4
