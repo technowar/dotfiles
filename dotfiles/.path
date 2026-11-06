@@ -8,8 +8,7 @@ fi
 export GOPATH=$HOME/Documents/Projects/go
 
 # Add bin
-export BIN=$HOME/bin
 export DOTBIN=$HOME/.bin
 
 # Add to $PATH
-export PATH=$GOPATH/bin:$BIN:$DOTBIN:$PATH
+export PATH=$GOPATH/bin:$DOTBIN:$PATH

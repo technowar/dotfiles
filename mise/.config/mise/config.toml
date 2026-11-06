@@ -1,6 +1,10 @@
 [tools]
 go = "latest"
+helm = "latest"
+kubectl = "latest"
 neovim = "latest"
-node = "lts"
+node = "24"
 ripgrep = "latest"
 tmux = "latest"
+
+[env]
