@@ -1,10 +1,12 @@
 [tools]
-go = "latest"
-helm = "latest"
-kubectl = "latest"
-neovim = "latest"
-node = "24"
-ripgrep = "latest"
-tmux = "latest"
+go = "1.27.4"
+helm = "4.3.1"
+kubectl = "1.37.2"
+neovim = "0.12.6"
+node = "24.22.2"
+python = "3.12"
+ripgrep = "15.2.0"
+ruby = "4.0.9"
+tmux = "3.8"
 
 [env]
