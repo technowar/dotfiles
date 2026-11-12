@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-function tgpt() {
-  curl -sSL https://raw.githubusercontent.com/aandrew-me/tgpt/main/install | /bin/bash -s ~/.bin/tgpt
-}
-
 function tpm() {
   git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 }
@@ -20,15 +16,6 @@ function setup() {
   if [ ! -x "$(command -v git)" ]; then
     echo Error: git is not installed
     exit 1
-  fi
-
-  # Install tgpt
-  if [ ! -d ~/.bin/tgpt ]; then
-    echo ' ------------- installing tgpt'
-    tgpt
-    echo ' ------------- tgpt installed'
-  else
-    echo ' ------------- tgpt is already installed'
   fi
 
   # Install tpm
@@ -61,7 +48,6 @@ function setup() {
 
 setup
 
-unset tgpt
 unset tpm
 unset z
 unset homebrew
