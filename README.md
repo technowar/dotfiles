@@ -38,6 +38,7 @@ Run stow
       - stylua
       - trim_newlines
       - trim_whitespace
+  - rclone
   - ripgrep
   - tmux
 - [gnu stow](https://www.gnu.org/software/stow)

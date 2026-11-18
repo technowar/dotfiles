@@ -36,3 +36,4 @@ Icon?
 
 .env
 lazy-lock.json
+rclone.conf
