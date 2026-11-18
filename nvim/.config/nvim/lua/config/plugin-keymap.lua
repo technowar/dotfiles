@@ -7,10 +7,15 @@ end, { desc = "Format buffer" })
 vim.keymap.set("n", "<leader>n", "<cmd>Neotree toggle<CR>", { desc = "Toggle file tree" })
 
 -- telescope
-local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<C-p>", builtin.find_files, { desc = "Find files" })
-vim.keymap.set("n", "<C-n>", builtin.grep_string, { desc = "Grep word under cursor" })
-vim.keymap.set("n", "<leader>rg", builtin.live_grep, { desc = "Live grep" })
+local function telescope(picker)
+	return function()
+		require("telescope.builtin")[picker]()
+	end
+end
+
+vim.keymap.set("n", "<C-p>", telescope("find_files"), { desc = "Find files" })
+vim.keymap.set("n", "<C-n>", telescope("grep_string"), { desc = "Grep word under cursor" })
+vim.keymap.set("n", "<leader>rg", telescope("live_grep"), { desc = "Live grep" })
 
 -- LSP
 -- Run an LSP location request, but only open a vertical split if there is a result
@@ -18,9 +23,18 @@ local function in_vsplit(request)
 	return function()
 		request({
 			on_list = function(res)
-				vim.cmd("vsplit")
+				if #res.items == 0 then
+					return
+				end
 				vim.fn.setqflist({}, " ", { items = res.items, title = res.title })
+				vim.cmd("vsplit")
 				vim.cmd("cfirst")
+				-- With several results, also show the list at the bottom
+				if #res.items > 1 then
+					local def_win = vim.api.nvim_get_current_win()
+					vim.cmd("copen")
+					vim.api.nvim_set_current_win(def_win)
+				end
 			end,
 		})
 	end

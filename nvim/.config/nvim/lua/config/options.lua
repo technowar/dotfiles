@@ -1,70 +1,56 @@
--- Assign set to vim.opt
-local set=vim.opt
+local set = vim.opt
 
 -- Mouse
-set.mouse="a"
+set.mouse = "a"
 
--- Use OS clipboard
-set.clipboard="unnamed"
+-- Use OS clipboard (fine on macOS; use "unnamedplus" on Linux)
+set.clipboard = "unnamed"
 
--- Set syntax
-set.syntax="on"
+-- Use spaces rather than tabs, 1 indent == 2 spaces
+set.expandtab = true
+set.shiftwidth = 2
+set.softtabstop = 2
+set.tabstop = 2
+set.smartindent = true
 
--- Don’t add empty newline at the end of files
-set.endofline=false
+-- Soft-wrap long lines at word boundaries
+set.wrap = true
+set.linebreak = true
 
--- Use tabs rather than spaces
-set.expandtab=true
+-- Respect modelines in files
+set.modelines = 4
 
--- 1 tab == 2 spaces
-set.shiftwidth=2
-set.softtabstop=2
-set.tabstop=2
-
--- Linebreak on 500 characters
-set.linebreak=true
-set.textwidth=500
-set.smartindent=true
-
--- Respect modeline in files
-set.modelines=4
-
--- Set relativenumber
-set.relativenumber=true
-set.number=true
+-- Line numbers
+set.relativenumber = true
+set.number = true
 
 -- Highlight current line
-set.cursorline=true
+set.cursorline = true
 
--- Ignore case of searches
-set.ignorecase=true
+-- Case-insensitive search unless the pattern has an uppercase letter
+set.ignorecase = true
+set.smartcase = true
 
--- Don’t show the intro message when starting Vim
-set.shortmess="atI"
+-- Hide the intro message and shorten messages, keeping the defaults
+set.shortmess:append("atI")
 
 -- Show the filename in the window titlebar
-set.title=true
+set.title = true
 
--- Start scrolling three lines before the horizontal window border
-set.scroll=3
+-- Keep 3 lines of context above/below the cursor
+set.scrolloff = 3
 
--- Folding settings
-set.foldmethod="indent"
-set.foldnestmax=10
-set.foldenable=false
-set.foldlevel=1
+-- Folding (folds are off until you toggle them with zi)
+set.foldmethod = "indent"
+set.foldnestmax = 10
+set.foldenable = false
+set.foldlevel = 1
 
--- Better display for messages
-set.cmdheight=2
+-- Faster CursorHold events
+set.updatetime = 300
 
--- Smaller updatetime for CursorHold & CursorHoldI
-set.updatetime=300
+-- Always show the sign column
+set.signcolumn = "yes"
 
--- Always show signcolumns
-set.signcolumn="yes"
-
--- Set filetype
-set.filetype="on"
-
--- All matches in a line are substituted
-set.gdefault=true
+-- All matches in a line are substituted (flip the meaning of the g flag)
+set.gdefault = true

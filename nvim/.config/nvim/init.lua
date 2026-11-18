@@ -29,9 +29,6 @@ require("config.mason-lsp")
 -- Load lualine
 require("config.lualine")
 
--- Load telescope
-require("config.telescope")
-
 -- Load treesitter
 require("config.treesitter")
 
