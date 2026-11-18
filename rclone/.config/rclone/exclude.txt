@@ -1,0 +1,7 @@
+._*
+._.DS_Store
+.DS_Store
+.com.apple.timemachine.supported
+.localized
+.metadata
+Thumbs.db

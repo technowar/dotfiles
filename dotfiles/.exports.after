@@ -5,3 +5,6 @@ fi
 
 # z
 . ~/.bin/z/z.sh
+
+# Rclone exclude file
+export RCLONE_EXCLUDE_FROM="$HOME/.config/rclone/exclude.txt"
