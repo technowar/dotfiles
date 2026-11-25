@@ -5,3 +5,4 @@
 .localized
 .metadata
 Thumbs.db
+*.xmp
